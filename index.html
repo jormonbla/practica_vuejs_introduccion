@@ -11,7 +11,7 @@
 
     <body>
 
-        <h1 id="autor">Autor: TU NOMBRE AQUÍ</h1>
+        <h1 id="autor">Autor: JORGE MONTALVO</h1>
 
         <!-- https://vuejs.org/v2/guide/index.html -->
         <div id="app">
@@ -27,9 +27,25 @@
                    - El término <dt> será la propiedad "prompt"
                    - La definición <dd> será la propiedad "value"
             -->
-
+            <div class="jumbotron">
+                <h1 class="display-4" id="title">{{ title }}</h1>
+            </div>
+            <div class="container">
+                <div class="row" style="margin-left: 1rem;">
+                    <div class="col-md-4 mb-3 card" v-for="item in col.collection.items" :key="item.id">
+                        <div class="container mt-4 mb-3">
+                            <dl v-for="data in item.data">
+                                <dt>{{ data.prompt }}</dt>
+                                <dd>{{ data.value }}</dd>
+                            </dl>
+                            <a :href=item.href class="btn btn-primary">Otros...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="./js/script.js"></script>
     </body>
 
 </html>
